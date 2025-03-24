@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://om32l2t0jlk5"]
+
+[ext_resource type="PackedScene" uid="uid://dblkcq12f1y6b" path="res://assets/thunderbolt3.glb" id="1_j8p1v"]
+
+[sub_resource type="Environment" id="Environment_tpxbh"]
+glow_enabled = true
+glow_strength = 1.25
+glow_blend_mode = 0
+
+[node name="thunderbolt3" instance=ExtResource("1_j8p1v")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1"]
+environment = SubResource("Environment_tpxbh")

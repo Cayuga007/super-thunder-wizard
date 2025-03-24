@@ -1,0 +1,155 @@
+[gd_scene load_steps=11 format=3 uid="uid://k4m446k8fd00"]
+
+[ext_resource type="Script" path="res://scripts/projectile.gd" id="2_fd3ne"]
+[ext_resource type="AudioStream" uid="uid://y82jl5dqpl55" path="res://assets/charge.wav" id="2_o8j60"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_08nth"]
+resource_name = "yellow"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0, 0, 0, 1)
+metallic = 1.0
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_fn44h"]
+_surfaces = [{
+"aabb": AABB(-0.787868, -0.5, -1.21213, 1.57574, 0.50001, 2.42426),
+"format": 4097,
+"index_count": 60,
+"index_data": PackedByteArray(4, 0, 3, 0, 5, 0, 4, 0, 1, 0, 3, 0, 0, 0, 5, 0, 2, 0, 0, 0, 4, 0, 5, 0, 10, 0, 9, 0, 7, 0, 10, 0, 11, 0, 9, 0, 6, 0, 11, 0, 10, 0, 6, 0, 8, 0, 11, 0, 0, 0, 10, 0, 4, 0, 0, 0, 6, 0, 10, 0, 1, 0, 9, 0, 3, 0, 1, 0, 7, 0, 9, 0, 2, 0, 6, 0, 0, 0, 2, 0, 8, 0, 6, 0, 3, 0, 11, 0, 5, 0, 3, 0, 9, 0, 11, 0, 5, 0, 8, 0, 2, 0, 5, 0, 11, 0, 8, 0, 4, 0, 7, 0, 1, 0, 4, 0, 10, 0, 7, 0),
+"name": "yellow",
+"primitive": 3,
+"vertex_count": 12,
+"vertex_data": PackedByteArray(136, 18, 208, 190, 0, 0, 0, 39, 136, 18, 208, 62, 183, 177, 73, 63, 69, 77, 31, 50, 37, 39, 155, 63, 183, 177, 73, 191, 69, 77, 31, 178, 37, 39, 155, 191, 136, 18, 208, 62, 0, 0, 0, 167, 136, 18, 208, 190, 0, 0, 0, 0, 38, 4, 222, 38, 198, 200, 63, 62, 0, 0, 0, 0, 38, 4, 222, 166, 198, 200, 63, 190, 136, 18, 208, 190, 0, 0, 0, 191, 137, 18, 208, 62, 183, 177, 73, 63, 0, 0, 0, 191, 37, 39, 155, 63, 183, 177, 73, 191, 0, 0, 0, 191, 37, 39, 155, 191, 136, 18, 208, 62, 0, 0, 0, 191, 135, 18, 208, 190, 0, 0, 0, 0, 0, 0, 0, 191, 199, 200, 63, 62, 0, 0, 0, 0, 0, 0, 0, 191, 197, 200, 63, 190)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_q2agx"]
+resource_name = "thunderbolt4_Plane"
+_surfaces = [{
+"aabb": AABB(-0.787868, -0.5, -1.21213, 1.57574, 0.50001, 2.42426),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 63, 0, 0, 128, 63, 0, 0, 0, 63, 0, 0, 128, 63, 0, 0, 0, 63, 0, 0, 128, 63, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 63, 0, 0, 128, 63, 0, 0, 0, 63, 0, 0, 128, 63, 0, 0, 0, 63, 0, 0, 128, 63, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 63, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 60,
+"index_data": PackedByteArray(13, 0, 10, 0, 16, 0, 13, 0, 4, 0, 10, 0, 1, 0, 16, 0, 7, 0, 1, 0, 13, 0, 16, 0, 31, 0, 28, 0, 22, 0, 31, 0, 34, 0, 28, 0, 19, 0, 34, 0, 31, 0, 19, 0, 25, 0, 34, 0, 0, 0, 30, 0, 12, 0, 0, 0, 18, 0, 30, 0, 3, 0, 27, 0, 9, 0, 3, 0, 21, 0, 27, 0, 8, 0, 20, 0, 2, 0, 8, 0, 26, 0, 20, 0, 11, 0, 35, 0, 17, 0, 11, 0, 29, 0, 35, 0, 15, 0, 24, 0, 6, 0, 15, 0, 33, 0, 24, 0, 14, 0, 23, 0, 5, 0, 14, 0, 32, 0, 23, 0),
+"material": SubResource("StandardMaterial3D_08nth"),
+"name": "yellow",
+"primitive": 3,
+"vertex_count": 36,
+"vertex_data": PackedByteArray(136, 18, 208, 190, 0, 0, 0, 39, 136, 18, 208, 62, 0, 0, 40, 211, 255, 255, 255, 191, 136, 18, 208, 190, 0, 0, 0, 39, 136, 18, 208, 62, 255, 127, 0, 0, 46, 215, 255, 63, 136, 18, 208, 190, 0, 0, 0, 39, 136, 18, 208, 62, 255, 255, 105, 152, 255, 255, 255, 191, 183, 177, 73, 63, 69, 77, 31, 50, 37, 39, 155, 63, 105, 24, 255, 127, 255, 255, 255, 63, 183, 177, 73, 63, 69, 77, 31, 50, 37, 39, 155, 63, 255, 127, 0, 0, 161, 183, 255, 63, 183, 177, 73, 63, 69, 77, 31, 50, 37, 39, 155, 63, 255, 255, 161, 183, 255, 255, 255, 191, 183, 177, 73, 191, 69, 77, 31, 178, 37, 39, 155, 191, 162, 55, 255, 127, 255, 255, 255, 63, 183, 177, 73, 191, 69, 77, 31, 178, 37, 39, 155, 191, 255, 127, 0, 0, 161, 183, 255, 63, 183, 177, 73, 191, 69, 77, 31, 178, 37, 39, 155, 191, 255, 255, 105, 152, 255, 255, 255, 191, 136, 18, 208, 62, 0, 0, 0, 167, 136, 18, 208, 190, 105, 24, 255, 127, 255, 255, 255, 63, 136, 18, 208, 62, 0, 0, 0, 167, 136, 18, 208, 190, 255, 127, 0, 0, 46, 215, 255, 63, 136, 18, 208, 62, 0, 0, 0, 167, 136, 18, 208, 190, 214, 172, 255, 127, 255, 255, 255, 63, 0, 0, 0, 0, 38, 4, 222, 38, 198, 200, 63, 62, 0, 0, 40, 211, 255, 255, 255, 191, 0, 0, 0, 0, 38, 4, 222, 38, 198, 200, 63, 62, 255, 127, 0, 0, 22, 248, 255, 63, 0, 0, 0, 0, 38, 4, 222, 38, 198, 200, 63, 62, 255, 255, 161, 183, 255, 255, 255, 191, 0, 0, 0, 0, 38, 4, 222, 166, 198, 200, 63, 190, 162, 55, 255, 127, 255, 255, 255, 63, 0, 0, 0, 0, 38, 4, 222, 166, 198, 200, 63, 190, 255, 127, 0, 0, 22, 248, 255, 63, 0, 0, 0, 0, 38, 4, 222, 166, 198, 200, 63, 190, 214, 172, 255, 127, 255, 255, 255, 63, 136, 18, 208, 190, 0, 0, 0, 191, 137, 18, 208, 62, 0, 0, 40, 211, 255, 255, 255, 191, 136, 18, 208, 190, 0, 0, 0, 191, 137, 18, 208, 62, 255, 127, 255, 255, 46, 215, 255, 191, 136, 18, 208, 190, 0, 0, 0, 191, 137, 18, 208, 62, 255, 255, 105, 152, 255, 255, 255, 191, 183, 177, 73, 63, 0, 0, 0, 191, 37, 39, 155, 63, 105, 24, 255, 127, 255, 255, 255, 63, 183, 177, 73, 63, 0, 0, 0, 191, 37, 39, 155, 63, 255, 127, 255, 255, 161, 183, 255, 191, 183, 177, 73, 63, 0, 0, 0, 191, 37, 39, 155, 63, 255, 255, 161, 183, 255, 255, 255, 191, 183, 177, 73, 191, 0, 0, 0, 191, 37, 39, 155, 191, 162, 55, 255, 127, 255, 255, 255, 63, 183, 177, 73, 191, 0, 0, 0, 191, 37, 39, 155, 191, 255, 127, 255, 255, 161, 183, 255, 191, 183, 177, 73, 191, 0, 0, 0, 191, 37, 39, 155, 191, 255, 255, 105, 152, 255, 255, 255, 191, 136, 18, 208, 62, 0, 0, 0, 191, 135, 18, 208, 190, 105, 24, 255, 127, 255, 255, 255, 63, 136, 18, 208, 62, 0, 0, 0, 191, 135, 18, 208, 190, 255, 127, 255, 255, 46, 215, 255, 191, 136, 18, 208, 62, 0, 0, 0, 191, 135, 18, 208, 190, 214, 172, 255, 127, 255, 255, 255, 63, 0, 0, 0, 0, 0, 0, 0, 191, 199, 200, 63, 62, 0, 0, 40, 211, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 191, 199, 200, 63, 62, 255, 127, 255, 255, 22, 248, 255, 191, 0, 0, 0, 0, 0, 0, 0, 191, 199, 200, 63, 62, 255, 255, 161, 183, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 191, 197, 200, 63, 190, 162, 55, 255, 127, 255, 255, 255, 63, 0, 0, 0, 0, 0, 0, 0, 191, 197, 200, 63, 190, 255, 127, 255, 255, 22, 248, 255, 191, 0, 0, 0, 0, 0, 0, 0, 191, 197, 200, 63, 190, 214, 172, 255, 127, 255, 255, 255, 63)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_fn44h")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5tlnm"]
+radius = 0.25
+height = 1.25
+
+[sub_resource type="Environment" id="Environment_vxhym"]
+glow_enabled = true
+glow_strength = 1.25
+glow_blend_mode = 0
+
+[sub_resource type="Animation" id="Animation_gm57s"]
+resource_name = "hit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape3D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_u0el4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape3D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rofd5"]
+_data = {
+"RESET": SubResource("Animation_u0el4"),
+"hit": SubResource("Animation_gm57s")
+}
+
+[node name="thunderbolt4" type="Area3D"]
+collision_mask = 2
+script = ExtResource("2_fd3ne")
+damage = 30
+
+[node name="Plane" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.25, 2.49301e-08, -0.433013, -0.433013, 2.21068e-08, 0.25, 1.49012e-08, 0.5, 0, 0, 0, 0)
+mesh = SubResource("ArrayMesh_q2agx")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_5tlnm")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vxhym")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_o8j60")
+autoplay = true
+bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rofd5")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

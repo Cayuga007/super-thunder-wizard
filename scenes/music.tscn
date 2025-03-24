@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://g0rskxg63x5i"]
+
+[ext_resource type="AudioStream" uid="uid://t22fpwii8q73" path="res://assets/music-for-arcade-style-game-146875.mp3" id="1_1q1bf"]
+
+[node name="Music" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_1q1bf")
+bus = &"Music"
